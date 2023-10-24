@@ -1,0 +1,1 @@
+export { UpdateThemeButton } from './ui';
