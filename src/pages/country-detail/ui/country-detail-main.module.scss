@@ -1,0 +1,30 @@
+@import '@/shared/styles/mixins';
+
+.container {
+  @include breakpoint(laptop) {
+    min-height: calc(100vh - 80px);
+  }
+
+  @include flex-column;
+
+  position: relative;
+
+  min-height: calc(100vh - 100px);
+  padding: 0;
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  &__spinner {
+    @include flex-center;
+
+    flex: auto;
+  }
+}
+
+.backToList {
+  @include breakpoint(laptop) {
+    margin-bottom: 80px;
+  }
+
+  margin-bottom: 120px;
+}
