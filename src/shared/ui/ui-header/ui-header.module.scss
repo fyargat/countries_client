@@ -1,0 +1,30 @@
+@import '@/shared/styles/mixins';
+
+.background {
+  background-color: var(--elements-background-color);
+  box-shadow: 0 0 25px -20px var(--shadow);
+}
+
+.container {
+  @include breakpoint(laptop) {
+    min-height: 80px;
+  }
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 100px;
+}
+
+.title {
+  @include breakpoint(laptop) {
+    font-size: 24px;
+    letter-spacing: -0.24px;
+  }
+
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
