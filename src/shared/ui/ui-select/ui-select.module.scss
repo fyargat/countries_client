@@ -1,0 +1,119 @@
+@import '@/shared/styles/mixins';
+
+$border-radius: 6px;
+
+.container {
+  @include breakpoint(laptop) {
+    max-width: 200px;
+  }
+
+  position: relative;
+  width: 100%;
+  max-width: 248px;
+}
+
+.field {
+  @include breakpoint(laptop) {
+    min-height: 56px;
+    padding: 20px;
+    padding-right: 15px;
+    padding-left: 27px;
+
+    font-size: 14px;
+    letter-spacing: 0.14px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 60px;
+  padding: 20px;
+  padding-left: 30px;
+
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.4px;
+
+  background-color: var(--elements-background-color);
+  border-radius: $border-radius;
+  box-shadow: 2px 2px 10px -7px var(--shadow);
+}
+
+.arrow {
+  @include breakpoint(laptop) {
+    width: 16px;
+    height: 16px;
+  }
+
+  @include flex-center;
+
+  width: 18px;
+  height: 18px;
+  transition: transform 0.1s ease;
+
+  &Reverse {
+    transform: rotate(180deg);
+  }
+
+  svg {
+    max-width: 100%;
+    height: auto;
+
+    svg {
+      stroke: var(--text-color);
+    }
+  }
+}
+
+.list {
+  @include breakpoint(laptop) {
+    min-height: 165px;
+  }
+
+  @include flex-column;
+
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 4px);
+  left: 0;
+
+  overflow: hidden;
+
+  width: 100%;
+  min-height: 180px;
+
+  background-color: var(--elements-background-color);
+  border-radius: $border-radius;
+  box-shadow: 2px 2px 10px -7px var(--shadow);
+}
+
+.item {
+  display: flex;
+  flex: 1;
+
+  &Active {
+    opacity: 0.3;
+  }
+}
+
+.itemButton {
+  @include breakpoint(laptop) {
+    padding-left: 27px;
+    font-size: 14px;
+    letter-spacing: 0.21px;
+  }
+
+  flex: auto;
+
+  padding: 5px 20px;
+  padding-left: 30px;
+
+  font-size: 16px;
+  font-weight: 300;
+  color: inherit;
+  text-align: left;
+  letter-spacing: -0.24px;
+}
