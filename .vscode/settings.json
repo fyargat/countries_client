@@ -1,0 +1,9 @@
+{
+  "window.title": "Countries Client",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#0ca1a6",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#0fcfd6"
+  },
+  "peacock.color": "#0ca1a6"
+}
