@@ -1,0 +1,280 @@
+openapi: 3.0.0
+paths:
+  /api/country:
+    get:
+      operationId: CountryController_getList
+      parameters:
+        - name: page
+          required: false
+          in: query
+          example: 0
+          schema:
+            type: number
+        - name: q
+          required: false
+          in: query
+          example: ar
+          schema:
+            type: string
+        - name: region
+          required: false
+          in: query
+          example: americas
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetListResponse'
+  /api/country/{id}:
+    get:
+      operationId: CountryController_getCountry
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: number
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCountryResponse'
+info:
+  title: Countries
+  description: Description
+  version: '1.0'
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas:
+    ResponseData:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 7328
+        flag:
+          type: string
+          example: https://flagcdn.com/am.svg
+        name:
+          type: string
+          example: Armenia
+        population:
+          type: number
+          example: 2963234
+        capital:
+          type: string
+          example: Yerevan
+        region:
+          type: string
+          example: Asia
+      required:
+        - id
+        - flag
+        - name
+        - population
+        - capital
+        - region
+    ResponseMeta:
+      type: object
+      properties:
+        total:
+          type: number
+          example: 100
+        lastPage:
+          type: number
+          example: 1
+        currentPage:
+          type: number
+          example: 1
+        perPage:
+          type: number
+          example: 10
+        prev:
+          type: object
+          example: null
+        next:
+          type: object
+          example: 2
+      required:
+        - total
+        - lastPage
+        - currentPage
+        - perPage
+        - prev
+        - next
+    GetListResponse:
+      type: object
+      properties:
+        data:
+          example:
+            - flag: >-
+                https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg
+              name: Afghanistan
+              population: 40218234
+              capital: Kabul
+              region: Asia
+              id: 7204
+          type: array
+          items:
+            $ref: '#/components/schemas/ResponseData'
+        meta:
+          example:
+            total: 250
+            lastPage: 25
+            currentPage: 1
+            perPage: 10
+            prev: null
+            next: 2
+          allOf:
+            - $ref: '#/components/schemas/ResponseMeta'
+      required:
+        - data
+        - meta
+    Language:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+        iso639_1:
+          type: string
+          example: es
+        iso639_2:
+          type: string
+          example: spa
+        name:
+          type: string
+          example: Spanish
+        nativeName:
+          type: string
+          example: Español
+      required:
+        - id
+        - iso639_1
+        - iso639_2
+        - name
+        - nativeName
+    Currency:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+        code:
+          type: string
+          example: ARS
+        name:
+          type: string
+          example: Argentine peso
+        symbol:
+          type: string
+          example: $
+      required:
+        - id
+        - code
+        - name
+        - symbol
+    Border:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+        name:
+          type: string
+          example: Bolivia
+      required:
+        - id
+        - name
+    GetCountryResponse:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 7328
+        flag:
+          type: string
+          example: https://flagcdn.com/am.svg
+        name:
+          type: string
+          example: Armenia
+        nativeName:
+          type: string
+          example: Argentina
+        population:
+          type: number
+          example: 2963234
+        area:
+          type: number
+          example: 2780400
+        capital:
+          type: string
+          example: Yerevan
+        region:
+          type: string
+          example: Asia
+        subregion:
+          type: string
+          example: South America
+        topLevelDomain:
+          example:
+            - .ar
+          type: array
+          items:
+            type: string
+        alpha2Code:
+          type: string
+          example: AR
+        alpha3Code:
+          type: string
+          example: ARG
+        languages:
+          example:
+            - id: 2276
+              iso639_1: es
+              iso639_2: spa
+              name: Spanish
+              nativeName: Español
+          type: array
+          items:
+            $ref: '#/components/schemas/Language'
+        currencies:
+          example:
+            - id: 5077
+              code: ARS
+              name: Argentine peso
+              symbol: $
+          type: array
+          items:
+            $ref: '#/components/schemas/Currency'
+        borders:
+          example:
+            - id: 1
+              name: Bolivia
+          type: array
+          items:
+            $ref: '#/components/schemas/Border'
+      required:
+        - id
+        - flag
+        - name
+        - nativeName
+        - population
+        - area
+        - capital
+        - region
+        - subregion
+        - topLevelDomain
+        - alpha2Code
+        - alpha3Code
+        - languages
+        - currencies
+        - borders
