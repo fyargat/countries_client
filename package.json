@@ -11,6 +11,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18"
