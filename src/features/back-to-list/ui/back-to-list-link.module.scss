@@ -1,0 +1,54 @@
+@import '@/shared/styles/mixins';
+
+.icon {
+  @include breakpoint(laptop) {
+    max-width: 20px;
+    min-height: 14px;
+  }
+
+  @include flex-center;
+
+  width: 100%;
+  max-width: 33px;
+  height: 20px;
+  transition: transform 0.3s ease;
+
+  svg {
+    fill: var(--text-color);
+  }
+}
+
+.link {
+  @include breakpoint(laptop) {
+    gap: 8px;
+
+    max-width: 136px;
+    min-height: 40px;
+
+    font-size: 18px;
+    letter-spacing: -0.72px;
+  }
+
+  @include flex-center;
+
+  gap: 20px;
+
+  width: 100%;
+  max-width: 208px;
+  min-height: 64px;
+
+  font-size: 30px;
+  font-weight: 300;
+  color: inherit;
+  letter-spacing: -0.6px;
+
+  background-color: var(--elements-background-color);
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px -7px var(--shadow);
+
+  &:hover {
+    .icon {
+      transform: translateX(-5px);
+    }
+  }
+}
