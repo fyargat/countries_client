@@ -1,0 +1,25 @@
+// Colors
+$white: hsl(0deg 0% 100%);
+$blue: hsl(209deg 23% 22%);
+$dark-blue: hsl(207deg 26% 17%);
+$gray: hsl(0deg 0% 52%);
+$light-gray: hsl(0deg 0% 98%);
+$wood-smoke: hsl(200deg 15% 8%);
+
+:root.light {
+  --background-color: #{$light-gray};
+  --text-color: #{$wood-smoke};
+  --elements-background-color: #{$white};
+  --shadow: #{$gray};
+  --card-border-color: #{$blue};
+  --search-input-color: #{$gray};
+}
+
+:root.dark {
+  --background-color: #{$dark-blue};
+  --text-color: #{$white};
+  --elements-background-color: #{$blue};
+  --shadow: #{$wood-smoke};
+  --card-border-color: #{$blue};
+  --search-input-color: #{$white};
+}
