@@ -1,0 +1,39 @@
+@import '@/shared/styles/mixins';
+
+.list {
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(laptop) {
+    grid-gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoint(desktop) {
+    grid-gap: 65px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.notFound {
+  font-size: 2rem;
+}
+
+.spinner {
+  @include flex-center;
+
+  position: absolute;
+  inset: 0;
+}
+
+.listSpinner {
+  @include flex-center;
+
+  margin-top: 1rem;
+}

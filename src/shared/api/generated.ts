@@ -33,7 +33,7 @@ export interface Language {
   nativeName: string;
 }
 
-export interface Country {
+export interface CountryFull {
   alpha2Code: string;
   alpha3Code: string;
   area: number;
@@ -64,7 +64,7 @@ export interface ResponseMeta {
   total: number;
 }
 
-export interface ResponseData {
+export interface CountryShort {
   capital: string;
   flag: string;
   id: number;
@@ -74,7 +74,7 @@ export interface ResponseData {
 }
 
 export interface GetListResponse {
-  data: ResponseData[];
+  data: CountryShort[];
   meta: ResponseMeta;
 }
 
@@ -100,7 +100,7 @@ export const fetchCountry = (
   id: string,
   options?: SecondParameter<typeof createInstance>,
 ) => {
-  return createInstance<Country>(
+  return createInstance<CountryFull>(
     { url: `/api/country/${id}`, method: 'get' },
     options,
   );
