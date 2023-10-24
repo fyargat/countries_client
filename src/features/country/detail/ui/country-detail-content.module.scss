@@ -1,0 +1,121 @@
+@import '@/shared/styles/mixins';
+
+.spinner {
+  @include flex-center;
+
+  position: absolute;
+  inset: 0;
+}
+
+.flag {
+  @include breakpoint(laptop) {
+    margin-bottom: 0;
+  }
+
+  flex: 1;
+  margin-bottom: 90px;
+}
+
+.content {
+  @include breakpoint(laptop) {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+  }
+
+  @include breakpoint(desktop) {
+    gap: 120px;
+    align-items: center;
+  }
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  @include breakpoint(laptop) {
+    margin-bottom: 30px;
+    font-size: 32px;
+    letter-spacing: -0.48px;
+  }
+
+  margin-bottom: 50px;
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -1.61px;
+}
+
+.text {
+  @include breakpoint(laptop) {
+    @include flex-wrap;
+
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  @include breakpoint(desktop) {
+    flex-wrap: nowrap;
+  }
+
+  margin-bottom: 75px;
+
+  &Block {
+    &First {
+      @include breakpoint(laptop) {
+        margin-right: 120px;
+        margin-bottom: 0;
+      }
+
+      margin-bottom: 80px;
+    }
+  }
+
+  &Row {
+    @include breakpoint(laptop) {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: -0.42px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &Bold {
+      font-weight: 600;
+    }
+  }
+}
+
+.border {
+  @include breakpoint(laptop) {
+    display: flex;
+    gap: 15px;
+  }
+
+  &Title {
+    @include breakpoint(laptop) {
+      flex: 0 0 130px;
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+
+    margin-bottom: 35px;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.48px;
+  }
+
+  &List {
+    @include flex-wrap;
+
+    gap: 20px;
+  }
+}
