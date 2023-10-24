@@ -97,7 +97,7 @@ export const fetchCountryList = (
 };
 
 export const fetchCountry = (
-  id: number,
+  id: string,
   options?: SecondParameter<typeof createInstance>,
 ) => {
   return createInstance<Country>(
