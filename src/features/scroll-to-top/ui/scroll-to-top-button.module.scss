@@ -1,0 +1,30 @@
+@import '@/shared/styles/mixins';
+
+$button-size: 2.5rem;
+$icon-size: 1rem;
+
+.container {
+  @include flex-center;
+
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  width: $button-size;
+  height: $button-size;
+
+  background-color: var(--background-color);
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px -4px var(--shadow);
+
+  span {
+    width: $icon-size;
+    height: $icon-size;
+
+    svg {
+      max-width: 100%;
+      height: auto;
+      stroke: var(--text-color);
+    }
+  }
+}
