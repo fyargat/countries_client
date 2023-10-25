@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   app:
-    # image:
+    image: ghcr.io/fyargat/countries_client:latest
     ports:
       - target: 3000
         published: 3002
