@@ -91,7 +91,7 @@ export const fetchCountryList = (
   options?: SecondParameter<typeof createInstance>,
 ) => {
   return createInstance<GetListResponse>(
-    { url: `/api/country`, method: 'get', params },
+    { url: `/country`, method: 'get', params },
     options,
   );
 };
@@ -101,7 +101,7 @@ export const fetchCountry = (
   options?: SecondParameter<typeof createInstance>,
 ) => {
   return createInstance<CountryFull>(
-    { url: `/api/country/${id}`, method: 'get' },
+    { url: `/country/${id}`, method: 'get' },
     options,
   );
 };

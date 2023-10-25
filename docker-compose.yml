@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    # image:
+    ports:
+      - target: 3000
+        published: 3002
+        mode: host
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: 1
