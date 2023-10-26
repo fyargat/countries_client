@@ -2,10 +2,11 @@ version: '3.8'
 services:
   app:
     image: ghcr.io/fyargat/countries_client:latest
-    ports:
-      - target: 3000
-        published: 3002
-        mode: host
     environment:
       NODE_ENV: production
       NEXT_TELEMETRY_DISABLED: 1
+
+networks:
+  default:
+    name: portfolio_network
+    external: true
