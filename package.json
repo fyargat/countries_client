@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "api:download": "wget http://localhost:3000/docs-yaml -o ./src/shared/api/schema.yaml",
-    "api:generate": "orval"
+    "api:generate": "orval",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.36.1",
